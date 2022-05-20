@@ -1,7 +1,7 @@
 ## Out-of-Distribution Detection in Classifiers via Generation
 
-### 실험 과정
-#### 1. Variational AutoEncoder를 In-distribution dataset으로 학습한다.
+### Experimental Process
+#### 1. Training Variational AutoEncoder with in-distribution dataset.
 <pre>
   - Data : In-distribution data (Train&Test)
   - Data setting : ./data/train/In-distribution data/train
@@ -18,16 +18,16 @@
   - output : vae model
 </pre>
  
-#### 2. 잘 학습된 Variational AutoEncoder를 이용해 OOD sample을 만든다.
+#### 2. Creating OOD samples using a pretrained Variational AutoEncoder.
 <pre>
-  - Data : 위와 동일
-  - Data setting : 위와 동일
-  - model : 1 번에서 학습된 VAE
+  - Data : Same as above
+  - Data setting : Same as above
+  - model : Pretrained VAE at step 1
   - python gen_ood.py --data './data/train/In-distribution' --dataset train --model_path './result'
   - output : OOD sample
 </pre>
 
-#### 3. 만들어진 OOD sample과 In-distribution dataset을 이용해 classifier을 학습한다.
+#### 3. Training a classifier with created OOD samples and in-distribution dataset.
 <pre>
   - Data : In-distribution data (Train&Test) / Generated OOD samples (Train&Test)
   - Data setting : x
@@ -35,7 +35,7 @@
   - output : classifier model
 </pre>
 
-#### 4. 앞서 학습된 classifier가 새로운 Out of distribution dataset도 잘 구분해 내는지 test 한다. 
+#### 4. Evaluating the pretrained classifier's OOD detection performance.
 <pre>
   - Data : In-distribution data (Test) / Out-of-distribution data (Test)
   - Data setting : ./data/test/Out-of-distribution data/test
@@ -43,7 +43,7 @@
                                                             / class 1 / *.png
                                                                    ...
                                                             / class n / *.png
-  - model : 3 번에서 학습된 classifier
+  - model : Pretrained classifier at step 3
   - python test.py --in_data './data/train/In-distribution' --out_data './data/test/Out-of-distribution data' 
                    --model_path './result'
   - output : AUROC
