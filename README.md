@@ -72,7 +72,10 @@ python gen_ood.py --data './data/train/mnist' --dataset train --model_epoch 100 
 
 - Output : ./data/train/mnist/ood/train/*.png
 </pre>
+<details>
+<summary> Generated OOD Samples </summary>
 
+</details>
 
 #### Train a Classifier model
 <pre>
