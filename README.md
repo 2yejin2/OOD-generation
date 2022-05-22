@@ -56,11 +56,11 @@
 python train_vae.py --in_data './data/train/mnist' --save_path './result' --epochs 100 --batch_size 128 --opt rmsprop --lr 0.001 --momentum 0.0 --gpu_id 0 --seed False
 </code>
 
-- 저장파일 : ./result/vae/model.pth
-                         /loss_curve.png
-                         /train_loss.log
-                         /vali_loss.log
-                         /configuration.json
+- Output : ./result/vae/model.pth
+                       /loss_curve.png
+                       /train_loss.log
+                       /vali_loss.log
+                       /configuration.json
 </pre>
 
 
@@ -70,7 +70,7 @@ python train_vae.py --in_data './data/train/mnist' --save_path './result' --epoc
 python gen_ood.py --data './data/train/mnist' --dataset train --model_epoch 100 --model_path './result' --batch_size 1000 --gpu_id 0
 </code>
 
-- 저장파일 : ./data/train/mnist/ood/train/*.png
+- Output : ./data/train/mnist/ood/train/*.png
 </pre>
 
 
@@ -80,12 +80,12 @@ python gen_ood.py --data './data/train/mnist' --dataset train --model_epoch 100 
 python train_classi.py --in_data './data/train/mnist' --save_path './result' --epochs 200 --batch_size 256 --opt ada --lr 0.05 --momentum 0.0 --gpu_id 0 --seed False
 </code>
 
-- 저장파일 : ./result/classifer/model.pth
-                               /loss_curve.png
-                               /accuracy_curve.png
-                               /train_loss(accuracy).log
-                               /vali_loss(accuracy).log
-                               /configuration.json
+- Output : ./result/classifer/model.pth
+                             /loss_curve.png
+                             /accuracy_curve.png
+                             /train_loss(accuracy).log
+                             /vali_loss(accuracy).log
+                             /configuration.json
 </pre>
 
 #### Test a model
@@ -94,7 +94,7 @@ python train_classi.py --in_data './data/train/mnist' --save_path './result' --e
 python test.py --in_data './data/train/mnist' --out_data './data/test/fmnist' --model_path './result' --model_epoch 200 --save_path './result' --gpu_id 0 --seed False
 </code>
 
-- 저장파일 : ./result/auroc.log
+- Output : ./result/auroc.log
 </pre>
 
 
