@@ -74,7 +74,7 @@ python gen_ood.py --data './data/train/mnist' --dataset train --model_epoch 100 
 </pre>
 <details>
 <summary> Generated OOD Samples </summary>
-![generated_ood_samples]("https://user-images.githubusercontent.com/62421163/169680602-1509ba15-5de8-4d30-b0b8-76253e6d6e98.png")
+<img width="70%" src="https://user-images.githubusercontent.com/62421163/169680602-1509ba15-5de8-4d30-b0b8-76253e6d6e98.png"/>
 </details>
 
 #### Train a Classifier model
