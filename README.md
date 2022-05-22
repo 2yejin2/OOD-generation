@@ -1,5 +1,7 @@
 ## Out-of-Distribution Detection in Classifiers via Generation
 
+This is the PyTorch implementation of "Out-of-Distribution Detection in Classifiers via Generation" paper. As for the details of the paper, please refer to [here](https://arxiv.org/abs/1910.04241).
+
 ### Experimental Process
 #### 1. Training Variational AutoEncoder with in-distribution dataset.
 <pre>
@@ -72,10 +74,10 @@ python gen_ood.py --data './data/train/mnist' --dataset train --model_epoch 100 
 
 - Output : ./data/train/mnist/ood/train/*.png
 </pre>
-<details>
-<summary> Generated OOD Samples </summary>
+
+
 <img width="70%" src="https://user-images.githubusercontent.com/62421163/169680602-1509ba15-5de8-4d30-b0b8-76253e6d6e98.png"/>
-</details>
+
 
 #### Train a Classifier model
 <pre>
